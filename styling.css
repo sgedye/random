@@ -1,0 +1,11 @@
+/*** Stylesheet Notes ***/
+
+.wrap { border: 5px solid red; }  // Border properties can be grouped together on a single line
+#img-01 { border-width: 2px auto; }  // Top and bottom borders are 2px; Left and right borders are 'auto';
+
+// When all children use 'float', the container will no longer encapsulate the elements, unless you use clearfix
+.main-content {width: 45%; float: left; }
+.sidebar { width: 45%; float: right; }
+// Clear-fix:
+.wrap:after { content: ""; display: block; clear: both; }
+
