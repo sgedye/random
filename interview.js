@@ -25,6 +25,13 @@ console.log(getPrivateVariable()); //Output: super secret code
 console.log(secretVariable()); //Output: f() { return private; }
 
 
+// Immediately Invoked Function Expression (IIFE)
+(favNumber = function (num=3) {
+	console.log("My favourite number is: " + num);
+})(); //This last pair of brackets means the function is called immediately.
+favNumber(5);
+
+
 //Using the typeof operator
 console.log(typeof typeof 1); //Output: string
   //typeof 1 = number
