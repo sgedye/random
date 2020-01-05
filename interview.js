@@ -17,7 +17,7 @@ arrayES6 = ['start', ...arrayES6, 'end']; //To both steps in 1 line of code
 function secretVariable() {
 	var private = "super secret code";
 	return function() {
-		return private
+		return private;
 	}
 }
 var getPrivateVariable = secretVariable();
