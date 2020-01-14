@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <style>div { padding-left: 10px; }</style>
+  </head>
+  <body>
+    <h3 style="text-align: center">Programming Exercises:</h3>
+
+    <strong>Write function to reverse a string:</strong>
+    <div id="1"></div>
+    <div id="1a"></div>
+    <br />
+    <strong>Write function to compute Nth fibonacci number:</strong>
+    <div id="2"></div>
+    <br />
+    <strong>Print out the multiplication table up to 12x12:</strong>
+    <div id="3-1"></div>
+    <div id="3-2"></div>
+    <div id="3-3"></div>
+    <div id="3-4"></div>
+    <div id="3-5"></div>
+    <div id="3-6"></div>
+    <div id="3-7"></div>
+    <div id="3-8"></div>
+    <div id="3-9"></div>
+    <div id="3-10"></div>
+    <div id="3-11"></div>
+    <div id="3-12"></div>
+    <br />
+
+    <strong>Sum up integers from a text file, one int per line:</strong>
+    <div id="4"></div>
+    <div id="4a"></div>
+    <br />
+
+    <strong>Print the odd numbers from 1 to 99 (inclusive):</strong>
+    <div id="5"></div>
+    <br />
+
+    <strong>Find the largest int value in an int array:</strong>
+    <div id="6"></div>
+    <div id="6a"></div>
+    <br />
+
+    <strong>Format an RGB value to a hexadecimal string:</strong>
+    <div id="7"></div>
+    <div id="7a"></div>
+    <br />
+    <script>
+      // Write function to reverse a string:
+      let myStr = `"This is a string to reverse"`
+      document.getElementById("1").innerHTML = myStr
+      let outStr = ""
+      for (let i=myStr.length-1; i>=0; i--) {
+        outStr += myStr[i]
+      }
+      document.getElementById("1a").innerHTML = outStr
+
+      // Write function to compute Nth fibonacci number:
+      function fib(n) {
+        if (n <= 1) {
+          return n;
+        } else {
+          return fib(n-1) + fib(n-2)
+        }
+      }
+      fib(10)
+      document.getElementById("2").innerHTML = `e.g. fib(10) = ${fib(10)}`
+
+      // Print out the multiplication table up to 12x12
+      let table = []
+      for (let i = 1; i <= 12; i++) {
+        let row = []
+        for (let j = 1; j <= 12; j++) {
+          row.push(i*j)
+        }
+        console.log(row)
+        document.getElementById(`3-${i}`).innerHTML = row
+      }
+
+      // Sum up integers from a text file, one int per line
+      document.getElementById("4").innerHTML = "???"
+
+      // Print the odd numbers from 1 to 99 (inclusive)
+      let outArr = []
+      for (let i=1; i<=99; i += 2) {
+        outArr.push(i)
+      }
+      document.getElementById("5").innerHTML = outArr
+
+      // Find the largest int value in an int array
+      document.getElementById("6").innerHTML = "let array = [3,7,1,12,99,4]"
+      let myArr = [3,7,1,12,99,4]
+      let max = myArr[0]
+      for (let i=1; i<myArr.length; i++) {
+        if (myArr[i] > max) {
+          max = myArr[i]
+        }
+      }
+      document.getElementById("6a").innerHTML = `Max number is: ${max}`
+
+      // Format an RGB value to a hexadecimal string
+      document.getElementById("7").innerHTML = `Let the RGB value = rgb(250, 14, 99)`
+      let r = 250
+      let g = 14
+      let b = 99
+      let hexInts = []
+      hexInts.push(Math.floor(r / 16))
+      hexInts.push(r % 16)
+      hexInts.push(Math.floor(g / 16))
+      hexInts.push(g % 16)
+      hexInts.push(Math.floor(b / 16))
+      hexInts.push(b % 16)
+      for (let i=0; i<hexInts.length; i++) {
+        if (hexInts[i] > 9) {
+          switch(hexInts[i]) {
+            case 10:
+              hexInts[i] = 'a'
+              break
+            case 11:
+              hexInts[i] = 'b'
+              break
+            case 12:
+              hexInts[i] = 'c'
+              break
+            case 13:
+              hexInts[i] = 'd'
+              break
+            case 14:
+              hexInts[i] = 'e'
+              break
+            case 15:
+              hexInts[i] = 'f'
+              break
+            default:
+              hexInts[i] = 'error'
+          }
+        }
+      }
+      let hexStr = ''
+      hexInts.map( el => { hexStr += el.toString()})
+      document.getElementById("7a").innerHTML = `Hex string: ${hexStr}`
+    </script>
+  </body>
+</html>
